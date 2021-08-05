@@ -1,12 +1,7 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
-  "rust-analyzer.server.path": "/home/samuel/.cargo/bin/rust-analyzer",
-  "rust-analyzer.inlayHints.refreshOnInsertMode": true,
-  "rust-analyzer.cargo.allFeatures": true,
-  "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
   "explorer.width": 30,
-  "explorer.file.autoReveal": true,
   "explorer.keyMappings.global": {
       "v": "open:vsplit"
   },
