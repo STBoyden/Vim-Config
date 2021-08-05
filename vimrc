@@ -169,6 +169,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'puremourning/vimspector'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'kdheepak/lazygit.nvim'
 
 call plug#end(  ) 
 
@@ -307,6 +308,10 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
 vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
 EOF
+
+let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯']
+
+map <silent> <space>lg :LazyGit<CR>
 
 autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
 \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
