@@ -317,6 +317,7 @@ autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
 \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
 
 let g:coc_global_extensions = [
+    \ "coc-explorer",
     \ "coc-git",
     \ "coc-json",
     \ "coc-kotlin",
@@ -335,6 +336,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " --- plugin specific bindings --- 
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " toggle NERDTree
 " map <C-b> :NERDTreeToggle<CR>
@@ -348,7 +350,7 @@ nnoremap <C-\> :W<CR>
 " nmap <Leader>gi <Plug>(coc-implementation)
 " nmap <Leader>gt <Plug>(coc-type-definition)
 " nmap <F2> <Plug>(coc-rename)
-
+nmap <C-b> :CocCommand explorer<CR>
 
 let g:fzf_command_expect = ''
 
