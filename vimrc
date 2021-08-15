@@ -20,15 +20,6 @@ set backspace=indent,eol,start
 set updatetime=300
 set cmdheight=2
 
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-else
-    " colorscheme base16-materia
-   "colorscheme base16-tomorrow-night-transparent
-   colorscheme base16-dracula
-endif
-
 hi NonText guifg=bg
 hi vertsplit guifg=fg guibg=bg
 
@@ -170,8 +161,20 @@ Plug 'puremourning/vimspector'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end(  ) 
+
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+else
+    " colorscheme base16-materia
+   "colorscheme base16-tomorrow-night-transparent
+   colorscheme dracula
+endif
+
+
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
